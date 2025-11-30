@@ -1,40 +1,225 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nityanand Jha - Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, showcasing my work as a Senior PHP & Automation Developer. This portfolio features a clean, colorful design with smooth animations and a fully responsive layout.
 
-First, run the development server:
+## 🌟 Features
+
+- **Modern UI/UX**: Beautiful, colorful design with glassmorphism effects and smooth animations
+- **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
+- **Fast Performance**: Built with Next.js 16 and optimized for production
+- **Contact Form**: Functional contact form with email integration support
+- **Project Showcase**: Organized display of projects by category (Lovable, Laravel, Web Projects)
+- **Resume Download**: Easy access to downloadable PDF resume
+- **Smooth Animations**: Engaging hover effects and transitions throughout
+- **Back to Top Button**: Convenient navigation for long pages
+- **SEO Optimized**: Proper metadata and semantic HTML
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **UI Components**: Custom React components
+- **Deployment**: Vercel-ready
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 18.0 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
+- [Git](https://git-scm.com/)
+
+## 🔧 Installation
+
+Follow these steps to set up the project locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/jhaNityanand/nityanand-portfolio.git
+```
+
+### 2. Navigate to Project Directory
+
+```bash
+cd nityanand-portfolio
+```
+
+### 3. Install Dependencies
+
+Using npm:
+```bash
+npm install
+```
+
+Or using yarn:
+```bash
+yarn install
+```
+
+Or using pnpm:
+```bash
+pnpm install
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or using yarn:
+```bash
+yarn dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Or using pnpm:
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Open in Browser
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+nityanand-portfolio/
+├── public/
+│   ├── images/
+│   │   └── profile-pic.jpg
+│   └── resume/
+│       └── resume-nityanand.pdf
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   │       └── route.ts
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── projects/
+│   │   │   └── page.tsx
+│   │   ├── resume/
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   └── components/
+│       ├── BackToTop.js
+│       ├── Experience.js
+│       ├── Footer.js
+│       ├── Header.js
+│       ├── Hero.js
+│       ├── ProjectsGrid.js
+│       └── Skills.js
+├── .gitignore
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.js
+└── tsconfig.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Available Scripts
 
-## Deploy on Vercel
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📧 Contact Form Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# nityanand-portfolio
->>>>>>> c7b5da83d73da85a0090d5387cb734030fcfb9c9
+The contact form is ready for email integration. To enable email functionality:
+
+1. **Using Nodemailer** (already included in dependencies):
+   - Set up environment variables in `.env.local`:
+   ```env
+   MAIL_HOST=your-smtp-host
+   MAIL_PORT=587
+   MAIL_USER=your-email@example.com
+   MAIL_PASS=your-password
+   MAIL_EMAIL=in.jha357@gmail.com
+   ```
+   - Uncomment the email sending code in `src/app/api/contact/route.ts`
+
+2. **Using Resend** (alternative):
+   - Install Resend: `npm install resend`
+   - Get API key from [Resend](https://resend.com)
+   - Update the contact route accordingly
+
+## 🎨 Customization
+
+### Update Personal Information
+
+1. **Profile Information**: Edit `src/components/Hero.js`
+2. **Skills**: Update `src/components/Skills.js`
+3. **Experience**: Modify `src/components/Experience.js`
+4. **Projects**: Edit `src/components/ProjectsGrid.js`
+5. **Contact Details**: Update `src/app/contact/page.tsx` and `src/components/Footer.js`
+
+### Change Colors
+
+Update the color scheme in `tailwind.config.js`:
+```javascript
+colors: {
+  primary: { /* your primary colors */ },
+  accent: { /* your accent colors */ },
+  // ...
+}
+```
+
+### Update Profile Picture
+
+Replace `public/images/profile-pic.jpg` with your own image (recommended size: 400x400px or larger).
+
+### Update Resume PDF
+
+Replace `public/resume/resume-nityanand.pdf` with your resume PDF.
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build
+4. Add environment variables if using email functionality
+5. Deploy!
+
+### Deploy to Other Platforms
+
+The project can be deployed to any platform that supports Next.js:
+- [Netlify](https://www.netlify.com/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
+- [Railway](https://railway.app/)
+- [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Nityanand Jha**
+
+- Portfolio: [Live Site](https://your-portfolio-url.vercel.app)
+- LinkedIn: [@nityanand-jha-788711271](https://www.linkedin.com/in/nityanand-jha-788711271/)
+- GitHub: [@jhaNityanand](https://github.com/jhaNityanand)
+- Email: in.jha357@gmail.com
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons and UI inspiration from modern web design trends
+
+## 📄 License
+
+MIT License - feel free to use this project as a template for your own portfolio!
+
+---
+
+⭐ If you find this project helpful, please consider giving it a star on GitHub!
