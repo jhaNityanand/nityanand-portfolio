@@ -1,25 +1,29 @@
 # Nityanand Jha - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js, showcasing my work as a Senior PHP & Automation Developer. This portfolio features a clean, colorful design with smooth animations and a fully responsive layout.
+A modern, responsive portfolio website built with Next.js, showcasing my work as a Senior PHP & Automation Developer. This portfolio features a clean, colorful design with smooth animations, glassmorphism effects, and a fully responsive layout optimized for all devices.
 
 ## 🌟 Features
 
 - **Modern UI/UX**: Beautiful, colorful design with glassmorphism effects and smooth animations
-- **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop)
+- **Fully Responsive**: Optimized for all devices (mobile, tablet, desktop) with proper spacing and layout
 - **Fast Performance**: Built with Next.js 16 and optimized for production
 - **Contact Form**: Functional contact form with email integration support
-- **Project Showcase**: Organized display of projects by category (Lovable, Laravel, Web Projects)
-- **Resume Download**: Easy access to downloadable PDF resume
-- **Smooth Animations**: Engaging hover effects and transitions throughout
+- **Project Showcase**: Organized display of projects by category (Lovable/Automation, Laravel, Web Projects)
+- **Resume Download**: Easy access to downloadable PDF resume with detailed resume page
+- **Smooth Animations**: Engaging hover effects, transitions, and blob animations
 - **Back to Top Button**: Convenient navigation for long pages
 - **SEO Optimized**: Proper metadata and semantic HTML
+- **Hobbies & Languages Section**: Showcase personal interests and language proficiency with progress bars
+- **Professional Experience Timeline**: Visual timeline displaying work history
+- **Skills Grid**: Organized display of technical skills with icons and gradients
 
 ## 🚀 Tech Stack
 
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript & JavaScript
+- **Styling**: Tailwind CSS 4 (CSS-based configuration)
 - **UI Components**: Custom React components
+- **Image Optimization**: Next.js Image component
 - **Deployment**: Vercel-ready
 
 ## 📋 Prerequisites
@@ -112,6 +116,7 @@ nityanand-portfolio/
 │       ├── Footer.js
 │       ├── Header.js
 │       ├── Hero.js
+│       ├── HobbiesLanguages.js
 │       ├── ProjectsGrid.js
 │       └── Skills.js
 ├── .gitignore
@@ -129,6 +134,20 @@ nityanand-portfolio/
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+
+## 🎨 Tailwind CSS Configuration
+
+This project uses **Tailwind CSS v4** with CSS-based configuration. Custom colors, fonts, and theme settings are defined in `src/app/globals.css` using the `@theme` directive:
+
+```css
+@theme {
+  --color-primary-50: #f0f4ff;
+  --color-primary-500: #667eea;
+  /* ... more colors */
+}
+```
+
+The `tailwind.config.js` file is minimal and only contains content paths. All theme customization is done in CSS.
 
 ## 📧 Contact Form Configuration
 
@@ -158,16 +177,18 @@ The contact form is ready for email integration. To enable email functionality:
 2. **Skills**: Update `src/components/Skills.js`
 3. **Experience**: Modify `src/components/Experience.js`
 4. **Projects**: Edit `src/components/ProjectsGrid.js`
-5. **Contact Details**: Update `src/app/contact/page.tsx` and `src/components/Footer.js`
+5. **Hobbies & Languages**: Update `src/components/HobbiesLanguages.js`
+6. **Contact Details**: Update `src/app/contact/page.tsx` and `src/components/Footer.js`
 
 ### Change Colors
 
-Update the color scheme in `tailwind.config.js`:
-```javascript
-colors: {
-  primary: { /* your primary colors */ },
-  accent: { /* your accent colors */ },
-  // ...
+Update the color scheme in `src/app/globals.css` using the `@theme` directive:
+
+```css
+@theme {
+  --color-primary-500: #667eea;
+  --color-accent-500: #4facfe;
+  /* ... customize colors */
 }
 ```
 
@@ -178,6 +199,15 @@ Replace `public/images/profile-pic.jpg` with your own image (recommended size: 4
 ### Update Resume PDF
 
 Replace `public/resume/resume-nityanand.pdf` with your resume PDF.
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with breakpoints optimized for:
+- **Mobile**: 320px - 640px
+- **Tablet**: 640px - 1024px
+- **Desktop**: 1024px and above
+
+All components are designed with mobile-first approach and include proper spacing, padding, and layout adjustments for different screen sizes.
 
 ## 🚀 Deployment
 
@@ -196,6 +226,44 @@ The project can be deployed to any platform that supports Next.js:
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - [Railway](https://railway.app/)
 - [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
+
+## 🎯 Key Components
+
+### Header
+- Fixed navigation with smooth scroll effects
+- Responsive mobile menu with hamburger animation
+- Download CV button
+
+### Hero Section
+- Animated background blobs
+- Profile image with experience badge
+- Social media links
+- Call-to-action buttons
+
+### Skills Section
+- Grid layout with glassmorphism cards
+- Icon-based skill categories
+- Hover effects and animations
+
+### Experience Section
+- Timeline layout with visual indicators
+- Company details and achievements
+- Responsive design for all screen sizes
+
+### Projects Grid
+- Categorized project display
+- External links to live projects
+- Stack information badges
+
+### Hobbies & Languages
+- Two-column layout (hobbies and languages)
+- Progress bars for language proficiency
+- Percentage-based language skills
+
+### Footer
+- Contact information
+- Quick links
+- Social media icons
 
 ## 📝 License
 
