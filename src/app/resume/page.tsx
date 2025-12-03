@@ -11,22 +11,22 @@ export default function Resume() {
   return (
     <>
       <Header />
-      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-        <div className="container mx-auto max-w-4xl">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 min-h-screen overflow-x-hidden">
+        <div className="container mx-auto max-w-5xl">
           {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4">
               <span className="bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
                 My Resume
               </span>
             </h1>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto px-4">
               Download my resume or view the summary below
             </p>
           </div>
 
           {/* Download Card */}
-          <div className="glass rounded-2xl p-8 mb-8 text-center card-hover relative overflow-hidden">
+          <div className="glass rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 text-center card-hover relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-transparent rounded-full -mr-16 -mt-16 opacity-50"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-100 to-transparent rounded-full -ml-12 -mb-12 opacity-50"></div>
@@ -53,7 +53,7 @@ export default function Resume() {
           </div>
 
           {/* Resume Summary */}
-          <div className="glass rounded-2xl p-8 space-y-6">
+          <div className="glass rounded-2xl p-5 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
             {/* Professional Summary */}
             <section>
               <h2 className="text-2xl font-bold text-gray-800 mb-2 flex items-center gap-3">

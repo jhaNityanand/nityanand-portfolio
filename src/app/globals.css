@@ -5,11 +5,57 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
+  /* Custom Colors - Primary */
+  --color-primary-50: #f0f4ff;
+  --color-primary-100: #e0e9ff;
+  --color-primary-200: #c7d7fe;
+  --color-primary-300: #a4b8fc;
+  --color-primary-400: #8190f8;
+  --color-primary-500: #667eea;
+  --color-primary-600: #764ba2;
+  --color-primary-700: #5a3d7a;
+  --color-primary-800: #3d2852;
+  --color-primary-900: #1f1529;
+
+  /* Custom Colors - Accent */
+  --color-accent-50: #f0f9ff;
+  --color-accent-100: #e0f2fe;
+  --color-accent-200: #bae6fd;
+  --color-accent-300: #7dd3fc;
+  --color-accent-400: #38bdf8;
+  --color-accent-500: #4facfe;
+  --color-accent-600: #00f2fe;
+  --color-accent-700: #0284c7;
+  --color-accent-800: #0369a1;
+  --color-accent-900: #0c4a6e;
+
+  /* Custom Colors - Warm */
+  --color-warm-50: #fef2f2;
+  --color-warm-100: #fee2e2;
+  --color-warm-200: #fecaca;
+  --color-warm-300: #fca5a5;
+  --color-warm-400: #fa709a;
+  --color-warm-500: #fee140;
+  --color-warm-600: #ef4444;
+  --color-warm-700: #dc2626;
+  --color-warm-800: #b91c1c;
+  --color-warm-900: #991b1b;
+
+  /* Custom Colors - Single Values */
+  --color-orange-accent: #e65a00;
+  --color-teal-dark: #0b3c5d;
+
+  /* Custom Font Family */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Box Shadows */
+  --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(102, 126, 234, 0.4);
+
+  /* Background and Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 html {
@@ -80,4 +126,73 @@ section {
   section {
     padding: 2.5rem 0;
   }
+}
+
+/* Ensure hero section doesn't get hidden behind fixed header */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Container max-width utilities */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Text overflow utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+*:focus-visible {
+  outline: 2px solid rgb(102, 126, 234);
+  outline-offset: 2px;
 }

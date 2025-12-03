@@ -12,62 +12,66 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[calc(100vh-8rem)] flex items-center">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-warm-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-64 h-64 sm:w-80 sm:h-80 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 sm:opacity-30 animate-blob"></div>
+        <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-64 h-64 sm:w-80 sm:h-80 bg-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 bg-warm-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 sm:opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-15">
+      <div className="container mx-auto relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 text-white rounded-full text-sm font-semibold shadow-lg">
+          <div className="text-center lg:text-left order-2 lg:order-1 overflow-visible">
+            <div className="inline-block mb-4 sm:mb-6 lg:mt-8 xl:mt-12 max-w-full">
+              <span className="inline-block px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 text-white rounded-full text-xs sm:text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-shadow duration-300 break-words">
                 Senior PHP & Automation Developer
               </span>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                 Nityanand Jha
               </span>
             </h1>
-            
-            <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Experienced Senior PHP & Automation Developer with 4+ years of expertise in Laravel, Core PHP, API development, AI-integrated systems, and automation workflows. Skilled in integrating payment gateways, social media APIs, and LLM models.
             </p>
 
             {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-              <div className="flex items-center gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="text-sm">+91 9016201780</span>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-700">
+                <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <span className="text-sm sm:text-base">+91 9016201780</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="text-sm">in.jha357@gmail.com</span>
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-700">
+                <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <span className="text-sm sm:text-base break-all">in.jha357@gmail.com</span>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary-500 transition-all duration-300 hover:scale-110 group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-500 hover:to-accent-500 transition-all duration-300 hover:scale-110 group"
                   aria-label={social.name}
                 >
-                  <svg className="w-6 h-6 text-gray-700 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
                 </a>
@@ -75,10 +79,10 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <a
                 href="#projects"
-                className="px-8 py-4 bg-gradient-to-r from-emerald-500 via-green-600 to-teal-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 text-center transform hover:from-primary-600 hover:via-primary-700 hover:to-accent-600 flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-500 via-green-600 to-teal-600 text-white rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-center transform hover:from-primary-600 hover:via-primary-700 hover:to-accent-600 flex items-center justify-center gap-2"
               >
                 <span>View My Projects</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +91,7 @@ export default function Hero() {
               </a>
               <a
                 href="/resume"
-                className="px-8 py-4 bg-white text-primary-600 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 border-2 border-primary-500 text-center hover:bg-primary-50 flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary-600 rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-primary-500 text-center hover:bg-primary-50 flex items-center justify-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -98,22 +102,22 @@ export default function Hero() {
           </div>
 
           {/* Right Profile Image */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2 mt-10 sm:mt-12 md:mt-16 lg:mt-0">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl transform rotate-6 opacity-20"></div>
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <Image 
-                  src="/images/profile-pic.jpg" 
-                  alt="Nityanand Jha" 
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl transform rotate-6 opacity-20 hidden sm:block"></div>
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 sm:border-8 border-white">
+                <Image
+                  src="/images/profile-pic.jpg"
+                  alt="Nityanand Jha"
                   width={320}
                   height={320}
                   className="w-full h-full object-cover"
                   priority
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 text-white px-6 py-3 rounded-xl shadow-xl">
-                <div className="text-sm font-semibold">4+ Years</div>
-                <div className="text-xs opacity-90">Experience</div>
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl shadow-xl">
+                <div className="text-xs sm:text-sm font-semibold">4+ Years</div>
+                <div className="text-[10px] sm:text-xs opacity-90">Experience</div>
               </div>
             </div>
           </div>

@@ -117,60 +117,60 @@ export default function ProjectsGrid() {
   ];
 
   return (
-    <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4">
             <span className="bg-gradient-to-r from-emerald-500 via-green-600 to-teal-600 bg-clip-text text-transparent">
               Selected Projects
             </span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
             A showcase of my work across automation, Laravel development, and web platforms
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {projectCategories.map((category, catIndex) => (
-            <div key={catIndex}>
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`h-1 flex-1 bg-gradient-to-r ${category.gradient} rounded-full`}></div>
-                <h3 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent whitespace-nowrap`}>
+            <div key={catIndex} className="w-full">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className={`h-0.5 sm:h-1 flex-1 bg-gradient-to-r ${category.gradient} rounded-full w-full sm:w-auto`}></div>
+                <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent whitespace-nowrap px-2`}>
                   {category.title}
                 </h3>
-                <div className={`h-1 flex-1 bg-gradient-to-r ${category.gradient} rounded-full`}></div>
+                <div className={`h-0.5 sm:h-1 flex-1 bg-gradient-to-r ${category.gradient} rounded-full w-full sm:w-auto`}></div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 {category.projects.map((project, projIndex) => (
                   <a
                     key={projIndex}
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass rounded-2xl p-6 card-hover group block"
+                    className="glass rounded-2xl p-5 sm:p-6 card-hover group block h-full flex flex-col"
                   >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-primary-600 transition-colors">
+                    <div className="flex items-start justify-between mb-3 sm:mb-4 gap-3">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 group-hover:text-primary-600 transition-colors duration-300 break-words">
                           {project.title}
                         </h4>
-                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${category.gradient} text-white shadow-md`}>
+                        <div className={`inline-block px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r ${category.gradient} text-white shadow-md whitespace-nowrap`}>
                           {project.stack}
                         </div>
                       </div>
-                      <div className="ml-4 flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="ml-2 flex-shrink-0">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-grow line-clamp-3">
                       {project.desc}
                     </p>
-                    <div className="mt-4 flex items-center text-primary-600 text-sm font-semibold group-hover:gap-2 transition-all">
+                    <div className="mt-4 flex items-center text-primary-600 text-sm font-semibold group-hover:gap-2 transition-all duration-300">
                       <span>View Project</span>
                       <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

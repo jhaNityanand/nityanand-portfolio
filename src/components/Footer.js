@@ -8,15 +8,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative py-12 px-4 sm:px-6 lg:px-8 bg-white/90 backdrop-blur-sm border-t border-gray-200">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="relative py-10 sm:py-12 px-4 sm:px-6 lg:px-8 bg-white/90 backdrop-blur-sm border-t border-gray-200 overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-6 sm:mb-8">
           {/* About */}
-          <div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <div className="min-w-0">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Nityanand Jha
             </h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base">
               Senior PHP & Automation Developer with 4+ years of expertise in building scalable solutions and automation workflows.
             </p>
             <div className="flex flex-col gap-2 text-sm text-gray-700">
@@ -24,43 +24,43 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>+91 9016201780</span>
+                <span className="break-words">+91 9016201780</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>in.jha357@gmail.com</span>
+                <span className="break-all">in.jha357@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Surat, Gujarat, India</span>
+                <span className="break-words">Surat, Gujarat, India</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="min-w-0">
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
-                <a href="/#projects" className="text-gray-700 hover:text-primary-600 transition-colors flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform"></span>
+                <a href="/#projects" className="text-gray-700 hover:text-primary-600 transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base">
+                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform duration-300"></span>
                   Projects
                 </a>
               </li>
               <li>
-                <a href="/resume" className="text-gray-700 hover:text-primary-600 transition-colors flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform"></span>
+                <a href="/resume" className="text-gray-700 hover:text-primary-600 transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base">
+                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform duration-300"></span>
                   Resume
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-700 hover:text-primary-600 transition-colors flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform"></span>
+                <a href="/contact" className="text-gray-700 hover:text-primary-600 transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base">
+                  <span className="w-1.5 h-1.5 bg-primary-600 rounded-full group-hover:scale-150 transition-transform duration-300"></span>
                   Contact
                 </a>
               </li>
@@ -68,8 +68,8 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-800">Connect With Me</h3>
+          <div className="min-w-0">
+            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800">Connect With Me</h3>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -77,11 +77,11 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-md flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-500 hover:to-primary-600 hover:border-primary-500 transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-gray-200 shadow-md flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-500 hover:to-primary-600 hover:border-primary-500 transition-all duration-300 hover:scale-110 hover:shadow-lg group"
                   aria-label={social.name}
                   title={social.name}
                 >
-                  <svg className="w-6 h-6 text-gray-700 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
                 </a>
@@ -90,8 +90,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 text-center">
-          <p className="text-gray-600 text-sm">
+        <div className="border-t border-gray-200 pt-6 sm:pt-8 text-center">
+          <p className="text-gray-600 text-xs sm:text-sm">
             © {new Date().getFullYear()} Nityanand Jha. All rights reserved. • Built with Next.js & Tailwind CSS
           </p>
         </div>

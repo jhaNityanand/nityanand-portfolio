@@ -46,24 +46,24 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-        <div className="container mx-auto max-w-4xl">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 min-h-screen overflow-x-hidden">
+        <div className="container mx-auto max-w-6xl">
           {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4">
               <span className="bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
                 Get In Touch
               </span>
             </h1>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto px-4">
               Have a project in mind or want to collaborate? I'd love to hear from you. Send me a message and I'll respond as soon as possible.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Contact Info Cards */}
-            <div className="lg:col-span-1 space-y-4">
-              <div className="glass rounded-2xl p-6 card-hover group relative overflow-hidden">
+            <div className="lg:col-span-1 space-y-4 sm:space-y-5">
+              <div className="glass rounded-2xl p-5 sm:p-6 card-hover group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -110,7 +110,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="glass rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+              <div className="glass rounded-2xl p-5 sm:p-6 md:p-8 relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary-100 to-transparent rounded-full -mr-20 -mt-20 opacity-30"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-accent-100 to-transparent rounded-full -ml-16 -mb-16 opacity-30"></div>
