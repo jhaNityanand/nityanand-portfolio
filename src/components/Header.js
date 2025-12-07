@@ -1,19 +1,67 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const [hashChecked, setHashChecked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      // Detect active section on home page
+      if (pathname === "/") {
+        const sections = ["projects", "skills", "experience"];
+        const scrollPosition = window.scrollY + 150;
+        
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const offsetTop = element.offsetTop;
+            const offsetHeight = element.offsetHeight;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              setActiveSection(section);
+              break;
+            }
+          }
+        }
+      } else {
+        setActiveSection(""); // Clear active section when not on home page
+      }
     };
+    
+    const handleHashChange = () => {
+      if (pathname === "/" && typeof window !== "undefined") {
+        const hash = window.location.hash;
+        if (hash === "#projects") {
+          setActiveSection("projects");
+        }
+      }
+    };
+    
+    // Check hash on mount
+    if (typeof window !== "undefined") {
+      if (pathname === "/" && window.location.hash === "#projects") {
+        setActiveSection("projects");
+      }
+    }
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("hashchange", handleHashChange);
+    handleScroll(); // Check on mount
+    setHashChecked(true); // Mark hash checked after initial setup
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [pathname]);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -23,9 +71,19 @@ export default function Header() {
       document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "auto";
     };
   }, [mobileMenuOpen]);
+
+  // Check if a link is active
+  const isActive = (href) => {
+    if (href === "/#projects") {
+      // Active only if on home page and hash matches (only after hash is checked)
+      return pathname === "/" && hashChecked && typeof window !== "undefined" && window.location.hash === "#projects";
+    }
+    // For other routes, check if pathname matches
+    return pathname === href;
+  };
 
   return (
     <header
@@ -52,24 +110,42 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             <Link
               href="/#projects"
-              className="relative px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300 rounded-lg hover:bg-primary-50/80 group"
+              className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg group ${
+                isActive("/#projects")
+                  ? "text-primary-600 bg-primary-50/80"
+                  : "text-gray-700 hover:text-primary-600 hover:bg-primary-50/80"
+              }`}
             >
               <span className="relative z-10">Projects</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 ${
+                isActive("/#projects") ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
             </Link>
             <Link
               href="/resume"
-              className="relative px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300 rounded-lg hover:bg-primary-50/80 group"
+              className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg group ${
+                isActive("/resume")
+                  ? "text-primary-600 bg-primary-50/80"
+                  : "text-gray-700 hover:text-primary-600 hover:bg-primary-50/80"
+              }`}
             >
               <span className="relative z-10">Resume</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 ${
+                isActive("/resume") ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
             </Link>
             <Link
               href="/contact"
-              className="relative px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary-600 transition-colors duration-300 rounded-lg hover:bg-primary-50/80 group"
+              className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg group ${
+                isActive("/contact")
+                  ? "text-primary-600 bg-primary-50/80"
+                  : "text-gray-700 hover:text-primary-600 hover:bg-primary-50/80"
+              }`}
             >
               <span className="relative z-10">Contact</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-300 ${
+                isActive("/contact") ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
             </Link>
             <a
               href="/resume/resume-nityanand.pdf"
@@ -118,21 +194,33 @@ export default function Header() {
             <div className="flex flex-col space-y-2">
               <Link
                 href="/#projects"
-                className="px-4 py-3.5 text-gray-800 hover:text-primary-600 transition-all duration-300 rounded-xl hover:bg-primary-50 font-semibold text-base border-l-4 border-transparent hover:border-primary-500"
+                className={`px-4 py-3.5 transition-all duration-300 rounded-xl font-semibold text-base border-l-4 ${
+                  isActive("/#projects")
+                    ? "text-primary-600 bg-primary-50 border-primary-500"
+                    : "text-gray-800 hover:text-primary-600 hover:bg-primary-50 border-transparent hover:border-primary-500"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Projects
               </Link>
               <Link
                 href="/resume"
-                className="px-4 py-3.5 text-gray-800 hover:text-primary-600 transition-all duration-300 rounded-xl hover:bg-primary-50 font-semibold text-base border-l-4 border-transparent hover:border-primary-500"
+                className={`px-4 py-3.5 transition-all duration-300 rounded-xl font-semibold text-base border-l-4 ${
+                  isActive("/resume")
+                    ? "text-primary-600 bg-primary-50 border-primary-500"
+                    : "text-gray-800 hover:text-primary-600 hover:bg-primary-50 border-transparent hover:border-primary-500"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Resume
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-3.5 text-gray-800 hover:text-primary-600 transition-all duration-300 rounded-xl hover:bg-primary-50 font-semibold text-base border-l-4 border-transparent hover:border-primary-500"
+                className={`px-4 py-3.5 transition-all duration-300 rounded-xl font-semibold text-base border-l-4 ${
+                  isActive("/contact")
+                    ? "text-primary-600 bg-primary-50 border-primary-500"
+                    : "text-gray-800 hover:text-primary-600 hover:bg-primary-50 border-transparent hover:border-primary-500"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
