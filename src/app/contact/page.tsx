@@ -158,7 +158,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-xl flex items-center justify-center gap-3 transform hover:from-primary-600 hover:via-primary-700 hover:to-accent-600"
+                    className="w-full cursor-pointer bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-xl flex items-center justify-center gap-3 transform hover:from-primary-600 hover:via-primary-700 hover:to-accent-600"
                   >
                     {isSubmitting ? (
                       <>
