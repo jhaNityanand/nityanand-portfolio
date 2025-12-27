@@ -7,19 +7,25 @@ export default function ProjectsGrid() {
         {
           title: "Guildboard Connect",
           link: "https://guildboard-connect-create.lovable.app/",
-          stack: "Lovable, n8n, Laravel",
+          stack: "Lovable, Supabase",
           desc: "An automated onboarding workflow that uses Lovable prompts and n8n automations to create seamless user flows and streamline business processes."
         },
         {
           title: "Apply Flow Forge (Admin)",
           link: "https://apply-flow-forge.lovable.app/admin",
-          stack: "Lovable, API",
+          stack: "Lovable, Supabase, API, XML Parsing, Webhooks",
           desc: "Comprehensive admin dashboard for flow management with integrated webhooks and payment test flows for efficient workflow automation."
+        },
+        {
+          title: "Candidate Hub",
+          link: "https://hub.wonderkind.com",
+          stack: "Lovable, Supabase, API, n8n, Superchat, Firecrawl, Brightdata",
+          desc: "Internal candidate routing engine and ATS for Wonderkind operators."
         },
         {
           title: "Kleo Chic Closet",
           link: "https://kleo-chic-closet.lovable.app/",
-          stack: "Lovable, Automation",
+          stack: "Lovable, Supabase",
           desc: "Modern e-commerce platform with automated inventory management and AI-powered product recommendations."
         },
         {
@@ -31,19 +37,19 @@ export default function ProjectsGrid() {
         {
           title: "Tempo Time Visualizer",
           link: "https://tempo-time-visualizer-app.lovable.app/dashboard",
-          stack: "Lovable, Data Visualization",
+          stack: "Lovable, Supabase, Data Visualization",
           desc: "Interactive time tracking and visualization tool with automated data processing and insightful analytics."
         },
         {
           title: "Sailsy.ai",
           link: "https://sailsy.ai/",
-          stack: "Lovable, AI",
+          stack: "Lovable, Supabase, OpenAi, Operrouter, Groq, AI",
           desc: "AI-powered platform leveraging advanced machine learning algorithms for intelligent business solutions."
         },
         {
           title: "Local Art Finder",
           link: "https://local-art-finder.lovable.app/",
-          stack: "Lovable, Location Services",
+          stack: "Lovable, Supabase",
           desc: "Discover and connect with local artists through an intuitive platform with automated matching and recommendation system."
         }
       ]
@@ -55,7 +61,7 @@ export default function ProjectsGrid() {
         {
           title: "AhevalNest",
           link: "https://ahevalnest.tarasvat.co.in/",
-          stack: "Laravel, MySQL",
+          stack: "Laravel, MySQL, API, webhooks",
           desc: "Machine data tracking dashboard that collects runtime data, generates comprehensive reports, and sends automated notifications for industrial monitoring."
         },
         {
@@ -67,19 +73,19 @@ export default function ProjectsGrid() {
         {
           title: "PowerGauge Hub",
           link: "https://hub.powergaugepro.com/",
-          stack: "Laravel, Analytics",
+          stack: "Laravel, MySQL, GitHub API, GOOGLE API, Gitea API, S3 Bucket",
           desc: "Centralized hub for power monitoring and analytics with real-time data visualization and automated alert systems."
         },
         {
           title: "Shreeji Ratnam",
           link: "https://www.shreejiratnam.com/",
-          stack: "Laravel, E-commerce",
+          stack: "Laravel, MySQL, Excel parse, E-commerce",
           desc: "Elegant e-commerce platform for jewelry and precious stones with secure payment integration and inventory management."
         },
         {
           title: "ExamTube",
           link: "https://examtube.in/",
-          stack: "Laravel, Vue",
+          stack: "Laravel, MySQL, API",
           desc: "Comprehensive online exam portal with question management, automated grading, detailed result reports, and student analytics."
         }
       ]
@@ -97,13 +103,13 @@ export default function ProjectsGrid() {
         {
           title: "Churchspring Admin Site",
           link: "https://site.churchspring.review",
-          stack: "Admin Dashboard",
+          stack: "Admin Dashboard, Khona, MySQL, API, Google Recaptcha",
           desc: "Administrative interface for managing church operations, content, and member communications efficiently."
         },
         {
           title: "Peter & Clark",
           link: "https://www.peterandclark.com",
-          stack: "Business Website",
+          stack: "Business Website, Symfony, MySQL, API, MemoQ",
           desc: "Professional business website with modern design, showcasing services and facilitating client engagement."
         },
         {
